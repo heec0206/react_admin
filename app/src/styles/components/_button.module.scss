@@ -1,0 +1,100 @@
+@charset "utf-8";
+@import '../variable';
+@import '../mixin';
+
+button {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-family: 'Noto Sans KR', sans-serif;
+  border: none;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+  &.header_ico {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    &.setting {
+      background-image: url('#{$appPath}/icon/icon_setting.png');
+    }
+  }
+  &.search {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #b7b7b7;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -12px 0 0 -12px;
+      width: 24px;
+      height: 24px;
+      background: url('#{$appPath}/icon/icon_search.png') no-repeat 50% 50%;
+      background-size: 24px auto;
+    }
+    &:hover:after {
+      animation: pulsate 0.299s;
+    }
+  }
+  &.excel {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #b7b7b7;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -12px 0 0 -12px;
+      width: 24px;
+      height: 24px;
+      background: url('#{$appPath}/icon/icon_excel02.png') no-repeat 50% 50%;
+      background-size: 24px auto;
+    }
+    &:hover:after {
+      animation: pulsate 0.299s;
+    }
+  }
+  &.pagination {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #b7b7b7;
+    &.db_prev {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10px;
+        height: 1px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(0.8, 0.8, 0.8);
+    transform: scale3d(0.8, 0.8, 0.8);
+  }
+  100% {
+    -webkit-animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "test": "/.(css|scss)$/",
+  "loader": "require.resolve('sass-loader')",
+  "options": {
+    "sourceMap": true
+  },
+
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es6",
+    "lib": ["dom", "es5", "es6", "es7", "es2017"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noImplicitAny": false, // any타입 금지
+    "noEmitOnError": true, // 에러 발생시 결과파일을 저장하지 않음
+    "pretty": true, // 에러 메시지를 예쁘게 설정
+    "removeComments": true, // 주석 삭제
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true, // 소스맵(*.map) 파일 생성 여부
+    "typeRoots": ["./types"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+  },
+  "exclude": ["node_modules"],
+  "include": ["src", ".eslintrc.json", "types"]
+}

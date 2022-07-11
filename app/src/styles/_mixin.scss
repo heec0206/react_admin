@@ -1,0 +1,260 @@
+@charset "utf-8";
+
+@mixin clearBoth() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin notoFont($weight: light, $color: #000) {
+  @if $weight==bold {
+    font-family: 'NotoSansKR-Bold';
+    color: $color;
+  } @else if $weight==light {
+    font-family: 'NotoSansKR-Light';
+    color: $color;
+  } @else if $weight==medium {
+    font-family: 'NotoSansKR-Medium';
+    color: $color;
+  } @else if $weight==thin {
+    font-family: 'NotoSansKR-Thin';
+    color: $color;
+  } @else if $weight==regular {
+    font-family: 'NotoSansKR-Regular';
+    color: $color;
+  } @else if $weight==black {
+    font-family: 'NotoSansKR-Black';
+    color: $color;
+  } @else if $weight==demilight {
+    font-family: 'NotoSansKR-DemiLight';
+    color: $color;
+  }
+}
+
+@mixin robotoFont($weight: regular, $color: #000) {
+  @if $weight==bold {
+    font-family: 'Roboto-Bold';
+    color: $color;
+  } @else if $weight==italic {
+    font-family: 'Roboto-Italic';
+    color: $color;
+  } @else if $weight==light {
+    font-family: 'Roboto-Light';
+    color: $color;
+  } @else if $weight==medium {
+    font-family: 'Roboto-Medium';
+    color: $color;
+  } @else if $weight==regular {
+    font-family: 'Roboto-Regular';
+    color: $color;
+  } @else if $weight==thin {
+    font-family: 'Roboto-Thin';
+    color: $color;
+  }
+}
+@mixin garamondFont($weight: regular, $color: #000) {
+  @if $weight==bold {
+    font-family: 'Garamond-bold';
+    color: $color;
+  } @else if $weight==regular {
+    font-family: 'Garamond-Regular';
+    color: $color;
+  }
+}
+@mixin scdreamFont($weight: bold, $color: #000) {
+  @if $weight==bold {
+    font-family: 'SCDream-6bold';
+    color: $color;
+  } @else if $weight==regular {
+    font-family: 'SCDream-4regular';
+    color: $color;
+  } @else if $weight==medium {
+    font-family: 'SCDream-5medium';
+    color: $color;
+  } @else if $weight==extrabold {
+    font-family: 'SCDream-7extrabold';
+    color: $color;
+  } @else if $weight==heavy {
+    font-family: 'SCDream-8heavy';
+    color: $color;
+  }
+}
+
+// @mixin@ keyword Arguments
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// animation
+@mixin rotateAnimate($deg, $time, $delay) {
+  transition: all $time ease $delay;
+  transform: rotate($deg);
+}
+
+// @mixin@  mediaQuery 디바이스별 적용 @mixin@
+@mixin mobile {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+// Display Flex를 활용한 영역대비 사이즈 자동 조절
+@mixin justify_flex($type: between, $isInline: false, $isReverse: false) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  @if ($isInline) {
+    display: -ms-inline-flexbox;
+    display: -webkit-inline-box;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+  } @else {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+  }
+  @if ($type == between) {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+  } @else if ($type == space-around) {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+  } @else if ($type == center) {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+  } @else if ($type == start) {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  } @else if ($type == end) {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
+
+  @if $isReverse {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+}
+
+@mixin lineClamp($line: 1, $isLine: 1.2) {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: $isLine;
+  @if $line== 1 {
+    white-space: nowrap;
+  } @else if $line== 2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  } @else if $line== 3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@mixin CarmenFont($weight: Light, $color: #000) {
+  @if $weight==Bold {
+    font-family: 'Carmen Sans Bold';
+    color: $color;
+  } @else if $weight==ExtraBold {
+    font-family: 'Carmen Sans ExtraBold';
+    color: $color;
+  } @else if $weight==Heavy {
+    font-family: 'Carmen Sans Heavy';
+    color: $color;
+  } @else if $weight==Light {
+    font-family: 'Carmen Sans Light';
+    color: $color;
+  } @else if $weight==Medium {
+    font-family: 'Carmen Sans Medium';
+    color: $color;
+  } @else if $weight==Regular {
+    font-family: 'Carmen Sans Regular';
+    color: $color;
+  } @else if $weight==SemiBold {
+    font-family: 'Carmen Sans SemiBold';
+    color: $color;
+  } @else if $weight==Thin {
+    font-family: 'Carmen Sans Thin';
+    color: $color;
+  } @else if $weight==UltraLight {
+    font-family: 'Carmen Sans UltraLight';
+    color: $color;
+  }
+}
+
+@mixin CentraNo2Font($weight: Black, $color: #000) {
+  @if $weight==Black {
+    font-family: 'CentraNo2-Black';
+    color: $color;
+  } @else if $weight==BlackItalic {
+    font-family: 'CentraNo2-BlackItalic';
+    color: $color;
+  } @else if $weight==Book {
+    font-family: 'CentraNo2-Book';
+    color: $color;
+  } @else if $weight==BookItalic {
+    font-family: 'CentraNo2-BookItalic';
+    color: $color;
+  } @else if $weight==Hairline {
+    font-family: 'CentraNo2-Hairline';
+    color: $color;
+  } @else if $weight==BlackItalic {
+    font-family: 'CentraNo2-BlackItalic';
+    color: $color;
+  } @else if $weight==HairlineItalic {
+    font-family: 'CentraNo2-HairlineItalic';
+    color: $color;
+  } @else if $weight==Light {
+    font-family: 'CentraNo2-Light';
+    color: $color;
+  } @else if $weight==LightItalic {
+    font-family: 'CentraNo2-LightItalic';
+    color: $color;
+  } @else if $weight==Thin {
+    font-family: 'CentraNo2-Thin';
+    color: $color;
+  } @else if $weight==ThinItalic {
+    font-family: 'CentraNo2-ThinItalic';
+    color: $color;
+  }
+}
+
+@mixin translate() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

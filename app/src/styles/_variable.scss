@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+// font-color
+$black01: #333;
+$red01: #ff0000;
+$gray01: #666;
+$gray02: #999;
+$gray03: #b7b7b7;
+$gray04: #e0e7eb;
+$blue01: #0080cc;
+$blue02: #4cb5e5;
+$blue03: #0791b6;
+$blue04: #c6d5de;
+$blue05: #e8f6ff;
+$purple01: #4c3f91;
+$purple02: #493a73;
+$purple03: #36468b;
+$purple04: #e5e1ff;
+$navy01: #172431;
+$navy02: #2d3e50;
+$navy03: #3d5a6c;
+$yellow01: #f7b924;
+
+//$black01: #000;
+//$black02: #231815;
+//$black03: #3f3a39;
+//$gray01: #595656;
+//$gray02: #727171;
+//$gray03: #898989;
+//$white01: #fff;
+//$green01: #00484d;
+//$orange01: #d74728;
+//$purple01: #b2a1c7;
+//$purple02: #8a75d1;
+
+//line-height
+$line1: 1.1;
+
+// font
+$font-base: 12;
+
+// padding & margin
+$padding-wrap: 20px;
+
+// web font
+$noto-r: 'NotoSansKR-Regular', sans-serif;
+$noto-b: 'NotoSansKR-Bold', sans-serif;
+$noto-t: 'NotoSansKR-Thin', sans-serif;
+$noto-l: 'NotoSansKR-Light', sans-serif;
+$noto-m: 'NotoSansKR-medium', sans-serif;
+
+$appPath: '/public/images/';
